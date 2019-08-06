@@ -4,12 +4,16 @@
 
         <todo-card class="mx-auto mt-4 h-64 w-full max-w-lg">
             Todo List
-        </todo-card>
+            <todo-taskslist></todo-taskslist>
+            <todo-task>{{tasks}}</todo-task>
+           </todo-card>
 
         <todo-card class="mx-auto mt-10 w-full max-w-lg">
             Create/Edit Task
         </todo-card>
-    </div>
+    
+   
+   </div>
 </template>
 
 <script>
@@ -24,6 +28,11 @@ export default {
                 {
                     id: 1,
                     title: 'Example task',
+                    done: false
+                },
+                {
+                    id: 2,
+                    title: 'Example task2',
                     done: false
                 }
             ]
