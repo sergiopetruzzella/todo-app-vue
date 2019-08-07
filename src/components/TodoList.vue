@@ -8,20 +8,23 @@
         </todo-card>
 
        
-
-         <todo-task v-for="task in tasks" class="mx-auto mt-4 h-64 w-full max-w-lg text-gray-700 absolute right-0 mt-32 mr-16" > 
-            <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+<ol>
+         <todo-task  class="mx-auto mt-4 h-64 w-full max-w-lg text-gray-700 absolute right-0 mr-16" > 
+            <li v-for="task in tasks">
+            
+            <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-3">
               <div class=" relative sm:flex sm:items-center px-0 py-4">
                 <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
                   <p class="text-xl leading-tight">{{task.title}}</p>
-                  <p class="pt-1 text-sm leading-tight text-gray-600">Customer Support Specialst</p>
+                  <p class="pt-1 text-sm leading-tight text-gray-600">{{task.description}}</p>
                 </div>
              <button class=" mr-2 absolute right-0 text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal">Message</button>
             
               </div>
             </div>
+                </li>
          </todo-task>
-
+</ol>
 
 <!--        <todo-card class="mx-auto mt-10 w-full max-w-lg text-gray-700">
             Create/Edit Task
@@ -48,6 +51,18 @@ export default {
                 {
                     id: 2,
                     title: 'Example task2',
+                    done: false,
+                    description: '',
+                },
+                {
+                    id: 3,
+                    title: 'Example task4',
+                    done: false,
+                    description: '',
+                },
+                {
+                    id: 3,
+                    title: 'Example task4',
                     done: false,
                     description: '',
                 }
