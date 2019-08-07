@@ -9,6 +9,10 @@
         <todo-card class="mx-auto mt-10 w-full max-w-lg">
             Create/Edit Task
         </todo-card>
+
+        <todo-card class="mx-auto mt-10 w-full max-w-lg">
+            <todo-form></todo-form>
+        </todo-card>
     </div>
 </template>
 
