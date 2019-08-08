@@ -1,39 +1,31 @@
 <template>
     <div class="container mx-auto px-4 py-20 flex flex-col flex-wrap">
         <h1 class="font-hairline text-5xl text-center text-gray-600">Ampizzella To-Do App</h1>
-         
       
-        <todo-card class="mx-auto mt-32 ml-16 w-full max-w-lg absolute left-0">
+        <todo-card class="mx-auto mt-16 mb-2 w-full max-w-lg">
             <todo-form></todo-form>
         </todo-card>
 
-       
-<ol>
-         <todo-task  class="mx-auto mt-4 h-64 w-full max-w-lg text-gray-700 absolute right-0 mr-16" > 
-            <li v-for="task in tasks">
+        <ol>
+            <todo-task  class="mx-auto mt-4 h-64 w-full max-w-lg text-gray-700" > 
+                <li v-for="task in tasks">
             
-            <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-3">
-              <div class=" relative sm:flex sm:items-center px-0 py-4">
-                <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
-                  <p class="text-xl leading-tight">{{task.title}}</p>
-                </div>
-             <button class=" mr-2 absolute right-0 text-indigo-700 hover:text-white hover:bg-indigo-700 border border-indigo-700 text-xs font-semibold rounded-full px-4 py-1 mr-24 leading-normal">
-                Done!
-            </button>
-            <button @click="deleteToDo()" class=" mr-2 absolute right-0 text-red-800 hover:text-white hover:bg-red-800 border border-red-800 text-xs font-semibold rounded-full px-4 py-1 leading-normal">
-                Delete
-            </button>
-            
-              </div>
-            </div>
+                    <div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-3">
+                        <div class=" relative sm:flex sm:items-center px-0 py-4">
+                            <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
+                            <p class="text-xl leading-tight">{{task.title}}</p>
+                            </div>
+                            <button class=" mr-2 absolute right-0 text-indigo-700 hover:text-white hover:bg-indigo-700 border border-indigo-700 text-xs font-semibold rounded-full px-4 py-1 mr-24 leading-normal">
+                                Done!
+                            </button>
+                            <button @click="deleteToDo()" class=" mr-2 absolute right-0 text-red-800 hover:text-white hover:bg-red-800 border border-red-800 text-xs font-semibold rounded-full px-4 py-1 leading-normal">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
                 </li>
-         </todo-task>
-</ol>
-
-<!--        <todo-card class="mx-auto mt-10 w-full max-w-lg text-gray-700">
-            Create/Edit Task
-        </todo-card> -->
-
+            </todo-task>
+        </ol>
     </div>
 </template>
 
