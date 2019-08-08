@@ -75,9 +75,9 @@ export default {
     },
 
     methods: {
-        deleteToDo() {
-            this.tasks.$remove(task);
-        }
-    }
+        deleteToDo(index) {
+            this.tasks.splice(index, 1);
+        },
+    },
 }
 </script>
