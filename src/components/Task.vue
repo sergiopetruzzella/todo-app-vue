@@ -1,5 +1,8 @@
 <template>
-    <h1 class="text-red-400">Task</h1>
+<div>
+    <slot></slot>
+</div>
+    
 </template>
 
 <script>
