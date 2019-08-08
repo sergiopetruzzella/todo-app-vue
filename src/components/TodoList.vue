@@ -1,6 +1,6 @@
 <template>
     <div class="container mx-auto px-4 py-20 flex flex-col flex-wrap">
-        <h1 class="font-hairline text-6xl text-center text-gray-500">Todo App</h1>
+        <h1 class="font-hairline text-5xl text-center text-gray-600">Ampizzella To-Do App</h1>
          
       
         <todo-card class="mx-auto mt-32 ml-16 w-full max-w-lg absolute left-0">
@@ -16,9 +16,13 @@
               <div class=" relative sm:flex sm:items-center px-0 py-4">
                 <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
                   <p class="text-xl leading-tight">{{task.title}}</p>
-                  <p class="pt-1 text-sm leading-tight text-gray-600">{{task.description}}</p>
                 </div>
-             <button class=" mr-2 absolute right-0 text-purple-500 hover:text-white hover:bg-purple-500 border border-purple-500 text-xs font-semibold rounded-full px-4 py-1 leading-normal">Message</button>
+             <button class=" mr-2 absolute right-0 text-indigo-700 hover:text-white hover:bg-indigo-700 border border-indigo-700 text-xs font-semibold rounded-full px-4 py-1 mr-24 leading-normal">
+                Done!
+            </button>
+            <button @click="deleteToDo()" class=" mr-2 absolute right-0 text-red-800 hover:text-white hover:bg-red-800 border border-red-800 text-xs font-semibold rounded-full px-4 py-1 leading-normal">
+                Delete
+            </button>
             
               </div>
             </div>
@@ -46,25 +50,21 @@ export default {
                     id: 1,
                     title: 'Example task',
                     done: false,
-                    description: 'Es necesario qeu vaya a ese sitio temprano'
                 },
                 {
                     id: 2,
                     title: 'Example task2',
                     done: false,
-                    description: '',
                 },
                 {
                     id: 3,
-                    title: 'Example task4',
+                    title: 'Example task3',
                     done: false,
-                    description: '',
                 },
                 {
-                    id: 3,
+                    id: 4,
                     title: 'Example task4',
                     done: false,
-                    description: '',
                 }
             ]
         };
@@ -75,7 +75,9 @@ export default {
     },
 
     methods: {
-
+        deleteToDo() {
+            this.tasks.$remove(task);
+        }
     }
 }
 </script>
