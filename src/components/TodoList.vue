@@ -13,10 +13,6 @@
          </todo-taskslist>
 </ol>
 
-<button @click="removeTask(2)" class=" mr-2 absolute right-0 text-red-800 hover:text-white hover:bg-red-800 border border-red-800 text-xs font-semibold rounded-full px-4 py-1 leading-normal">
-                Delete
-            </button>
- 
 
 <!--        <todo-card class="mx-auto mt-10 w-full max-w-lg text-gray-700">
             Create/Edit Task
@@ -64,19 +60,13 @@ export default {
         });},
 
         removeTask(index) {
-      this.tasks.splice(index-1, 1);
+        this.tasks.splice(index-1, 1);
           for (var i = index-1; i < this.tasks.length; i++) {
               this.tasks[i].id = this.tasks[i].id-1;
           }
     },
 
-    doneChange(index) {
-        this.tasks[index-1].done= true;
-        alert(this.tasks[index-1].done);
-      if (this.tasks[index-1].done= false) { this.tasks[index-1].done= true
-          
-      }
-          }
+   
     },
        
     }

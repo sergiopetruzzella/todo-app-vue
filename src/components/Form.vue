@@ -13,7 +13,7 @@
                 Add
             </button>
         </form>
-        {{tasks}}
+       
     </div>
 </template>
 
