@@ -4,31 +4,19 @@
          
       
         <todo-card class="mx-auto mt-32 ml-16 w-full max-w-lg absolute left-0">
-            <todo-form></todo-form>
+            <todo-form @addtask="addTask"></todo-form>
         </todo-card>
 
-       
-<ol>
-         <todo-task  class="mx-auto mt-4 h-64 w-full max-w-lg text-gray-700 absolute right-0 mr-16" > 
-            <li v-for="task in tasks">
-            
-            <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-3">
-              <div class=" relative sm:flex sm:items-center px-0 py-4">
-                <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
-                  <p class="text-xl leading-tight">{{task.title}}</p>
-                </div>
-             <button class=" mr-2 absolute right-0 text-indigo-700 hover:text-white hover:bg-indigo-700 border border-indigo-700 text-xs font-semibold rounded-full px-4 py-1 mr-24 leading-normal">
-                Done!
-            </button>
-            <button @click="deleteToDo()" class=" mr-2 absolute right-0 text-red-800 hover:text-white hover:bg-red-800 border border-red-800 text-xs font-semibold rounded-full px-4 py-1 leading-normal">
+     
+<ol id="app">
+         <todo-taskslist @remove="removeTask" @change="doneChange" :tasks="tasks" class="mx-auto mt-4 h-64 w-full max-w-lg text-gray-700 absolute right-0 mr-16" > 
+         </todo-taskslist>
+</ol>
+
+<button @click="removeTask(2)" class=" mr-2 absolute right-0 text-red-800 hover:text-white hover:bg-red-800 border border-red-800 text-xs font-semibold rounded-full px-4 py-1 leading-normal">
                 Delete
             </button>
-            
-              </div>
-            </div>
-                </li>
-         </todo-task>
-</ol>
+ 
 
 <!--        <todo-card class="mx-auto mt-10 w-full max-w-lg text-gray-700">
             Create/Edit Task
@@ -38,34 +26,17 @@
 </template>
 
 <script>
+var cont = 0; 
 export default {
+
     props: {
 
     },
 
-    data () {
-        return {
+    data () { 
+        return { 
             tasks: [
-                {
-                    id: 1,
-                    title: 'Example task',
-                    done: false,
-                },
-                {
-                    id: 2,
-                    title: 'Example task2',
-                    done: false,
-                },
-                {
-                    id: 3,
-                    title: 'Example task3',
-                    done: false,
-                },
-                {
-                    id: 4,
-                    title: 'Example task4',
-                    done: false,
-                }
+              
             ]
         };
     },
@@ -74,10 +45,40 @@ export default {
 
     },
 
+
+   
+
     methods: {
-        deleteToDo() {
-            this.tasks.$remove(task);
-        }
+        deleteToDo(text) {
+            // this.tasks.$remove(task);
+            alert(text)
+        }, 
+        addTask(text) {
+           cont = this.tasks.length+1;
+             
+      
+        this.tasks.push({
+            id: cont,
+          title: text,
+          done: false
+        });},
+
+        removeTask(index) {
+      this.tasks.splice(index-1, 1);
+          for (var i = index-1; i < this.tasks.length; i++) {
+              this.tasks[i].id = this.tasks[i].id-1;
+          }
+    },
+
+    doneChange(index) {
+        this.tasks[index-1].done= true;
+        alert(this.tasks[index-1].done);
+      if (this.tasks[index-1].done= false) { this.tasks[index-1].done= true
+          
+      }
+          }
+    },
+       
     }
-}
+
 </script>
