@@ -3,8 +3,8 @@
       
        <li v-for="task in tasks" v-bind:key="task.id">
 
-            <div  v-if="task.done === true" class="max-w-md mx-auto py-4  shadow-lg rounded-lg overflow-hidden my-3">
-              <div class=" relative sm:flex bg-red-400 sm:items-center px-0 py-4">
+            <div  v-if="task.done === true" class="max-w-md mx-auto bg-green-400 shadow-lg rounded-lg overflow-hidden my-3">
+              <div class=" relative sm:flex sm:items-center px-0 py-4">
                 <div class="mt-4 sm:mt-0 sm:ml-4 text-center sm:text-left">
                   <p class="text-xl leading-tight">{{task.id}}.{{task.title}}{{task.done}}</p>
                 </div>
