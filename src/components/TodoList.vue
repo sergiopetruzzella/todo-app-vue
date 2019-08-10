@@ -1,6 +1,6 @@
 <template>
     <div class="container mx-auto px-4 py-20 flex flex-col flex-wrap">
-        <h1 class="font-hairline text-5xl text-center text-gray-600">Ampizzella To-Do App</h1>
+        <h1 class="andres font-hairline text-5xl text-center text-gray-600">Ampizzella To-Do App</h1>
          
       
         <todo-card class="mx-auto mt-32 ml-16 w-full max-w-lg absolute left-0">
@@ -14,11 +14,10 @@
 </ol>
 
 
-<!--        <todo-card class="mx-auto mt-10 w-full max-w-lg text-gray-700">
-            Create/Edit Task
-        </todo-card> -->
-
+ 
+ 
     </div>
+    
 </template>
 
 <script>
@@ -26,8 +25,18 @@ var cont = 0;
 export default {
 
     props: {
+       
 
     },
+    computed: {
+    className() {
+      let classes = ['tasks__item__toggle'];
+      if (this.task.completed) {
+        classes.push('tasks__item__toggle--completed');
+      }
+      return classes.join(' ');
+    }
+  },
 
     data () { 
         return { 
