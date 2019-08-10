@@ -2,14 +2,15 @@
     <div class="container mx-auto px-4 pt-4 pb-12 flex flex-col flex-wrap relative">
         <form v-on:submit.prevent="onSubmit">
             <div class="mb-4">
-                <label class="block mb-2 text-gray-700" for="to-do-title">
+              <a href="#" @click="$emit('closeForm')" class="text-bold text-lg absolute right-0 mr-6 mb-10">x</a>
+                <label class="block mb-2 text-gray-700 text-lg" for="to-do-title">
                     Title
                 </label>
                 <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
                 id="username" v-model="newTask" type="text" placeholder="Title">
             </div>
             
-            <button @click="$emit('addtask',newTask)" class="bg-transparent border border-indigo-700 text-indigo-700 font-semibold hover:text-white hover:bg-indigo-700 py-1 px-4 rounded-full absolute bottom-0 right-0 mr-4">
+            <button @click="$emit('addtask',newTask)" class="bg-transparent border border-orange-600 text-orange-600 font-semibold hover:text-white hover:bg-orange-600 py-1 px-4 rounded-full absolute bottom-0 right-0 mr-4">
                 Add
             </button>
         </form>
